@@ -130,9 +130,11 @@ public class ConfigFileDao {
                     continue;
                 }else {
                     String[] elms = str.split("\\s+");
+                    if(elms.length != 2) {
+                        continue;
+                    }
                     String name = elms[0];
                     String value = elms[1];
-                    System.out.println(name + ": " + value);
                     SparkSettings setting = new SparkSettings(0L, name, value, "", "spark-defaults.conf");
                     sparkSettingDao.addSetting(setting);
                 }
