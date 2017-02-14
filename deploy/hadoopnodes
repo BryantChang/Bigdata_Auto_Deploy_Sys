@@ -1,0 +1,3 @@
+#hadoopnodelist
+#format
+#host:ip:os:sshport:sshuser:sshpassword:issudo_(1/0):namenode_(1/0):datanode_(1/0):secondarynamenode_(1/0):resourcemanager_(1/0):nodemanager_(1/0):isformatted_(1/0)

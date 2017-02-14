@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+<configuration>
+	<property>
+		<name>dfs.name.dir</name>
+		<value>{mount_name}</name>
+		<description>Namenode元数据存储位置</description>
+	</property>
+	<property>
+		<name>dfs.data.dir</name>
+		<value>{mount_data}</name>
+		<description>HDFS数据存储路径</description>
+	</property>
+	<property>
+		<name>dfs.replication</name>
+		<value>3</name>
+		<description>文件块复制份数</description>
+	</property>
+	<property>
+		<name>dfs.datanode.du.reserved</name>
+		<value>1073741824</name>
+		<description>每硬盘保留空间/字节</description>
+	</property>
+	<property>
+		<name>dfs.block.size</name>
+		<value>67108864</name>
+		<description>文件块大小/字节</description>
+	</property>
+	<property>
+		<name>dfs.permissions</name>
+		<value>true</name>
+		<description>是否启用Hadoop文件系统 true/false</description>
+	</property>
+	<property>
+		<name>dfs.balance.bandwidthPerSec</name>
+		<value>10485760</name>
+		<description>Balancer使用最大带宽/字节</description>
+	</property>
+	<property>
+		<name>dfs.support.append</name>
+		<value>true</name>
+		<description>是否允许对文件APPEND</description>
+	</property>
+	<property>
+		<name>dfs.datanode.failed.volumes.tolerated</name>
+		<value>0</name>
+		<description>硬盘故障数量异常阀值</description>
+	</property>
+	<property>
+		<name>dfs.datanode.max.xcievers</name>
+		<value>8192</name>
+		<description>Datanode打开文件句柄数</description>
+	</property>
+	<property>
+		<name>dfs.datanode.handler.count</name>
+		<value>20</name>
+		<description>Datanode处理RPC线程数</description>
+	</property>
+	<property>
+		<name>dfs.namenode.handler.count</name>
+		<value>60</name>
+		<description>Namenode处理RPC线程数</description>
+	</property>
+	<property>
+		<name>dfs.safemode.extension</name>
+		<value>5</name>
+		<description>Namenode退出Safemode的延迟时间</description>
+	</property>
+</configuration>

@@ -1,0 +1,116 @@
+DROP DATABASE IF EXISTS `autosys`;
+CREATE DATABASE  IF NOT EXISTS `autosys`;
+USE `autosys`;
+
+
+--
+-- 表的结构 `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE IF NOT EXISTS `user` (
+  `id` int(10) unsigned NOT NULL auto_increment,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `role` int(10) unsigned NOT NULL,
+  `mobile` varchar(15) NOT NULL,
+  `email`  varchar(50) NOT NULL,
+  `ctime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY  (`id`),
+  UNIQUE KEY `username` (`username`),
+  KEY `role` (`role`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+-- --------------------------------------------------------
+
+
+--
+-- 表的结构 `hadoopnode`
+--
+
+DROP TABLE IF EXISTS `hadoopnode`;
+CREATE TABLE IF NOT EXISTS `hadoopnode` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `hostname` varchar(100) NOT NULL COMMENT '主机名',
+  `ip` varchar(15) NOT NULL COMMENT 'ip地址',
+  `os` varchar(30) NOT NULL COMMENT '操作系统',
+  `sshport` int NOT NULL COMMENT 'ssh端口号',
+  `sshuser` varchar(30) NOT NULL COMMENT 'ssh用户',
+  `sshpass` varchar(30) NOT NULL COMMENT '密码',
+  `issudo` tinyint(1) NOT NULL,
+  `namenode` tinyint(1) NOT NULL COMMENT '是否为namenode--0:false,1:true',
+  `datanode` tinyint(1) NOT NULL COMMENT '是否为datanode--0:false,1:true',
+  `secondarynamenode` tinyint(1) NOT NULL,
+  `resourcemanager` tinyint(1) NOT NULL,
+  `nodemanager` tinyint(1) NOT NULL,
+  `isformatted` tinyint(1) NOT NULL,
+  `ctime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`,`hostname`,`ip`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
+
+
+--
+-- 表的结构 `sparknode`
+--
+
+DROP TABLE IF EXISTS `sparknode`;
+CREATE TABLE IF NOT EXISTS `sparknode` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `hostname` varchar(100) NOT NULL COMMENT '主机名',
+  `ip` varchar(15) NOT NULL COMMENT 'ip地址',
+  `os` varchar(30) NOT NULL COMMENT '操作系统',
+  `sshport` int NOT NULL COMMENT 'ssh端口号',
+  `sshuser` varchar(30) NOT NULL COMMENT 'ssh用户',
+  `sshpass` varchar(30) NOT NULL COMMENT '密码',
+  `master` tinyint(1) NOT NULL COMMENT '是否为namenode--0:false,1:true',
+  `slave` tinyint(1) NOT NULL COMMENT '是否为namenode--0:false,1:true',
+  `issudo` tinyint(1) NOT NULL,
+  `ctime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`,`hostname`,`ip`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+
+-- --------------------------------------------------------
+
+
+
+--
+-- 表的结构 `hadoopsettings`
+--
+
+DROP TABLE IF EXISTS `hadoopsettings`;
+CREATE TABLE IF NOT EXISTS `hadoopsettings` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `value` text,
+  `description` text NOT NULL,
+  `filename` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `filename` (`filename`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=56 ;
+-- --------------------------------------------------------
+
+
+--
+-- 表的结构 `sparksettings`
+--
+
+DROP TABLE IF EXISTS `sparksettings`;
+CREATE TABLE IF NOT EXISTS `sparksettings` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(100) NOT NULL,
+  `value` varchar(100) NOT NULL,
+  `description` text NOT NULL,
+  `filename` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1000 ;
+-- --------------------------------------------------------
+
+
+
+
+
+
+

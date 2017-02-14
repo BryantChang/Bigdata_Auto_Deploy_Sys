@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+<configuration>
+	<property>
+		<name>fs.default.name</name>
+		<value>hdfs://centos1:9000</name>
+		<description>HDFS主节点访问地址和端口</description>
+	</property>
+	<property>
+		<name>fs.checkpoint.period</name>
+		<value>1800</name>
+		<description>HDFS元数据备份间隔时间(SNN)/秒</description>
+	</property>
+	<property>
+		<name>fs.checkpoint.size</name>
+		<value>33554432</name>
+		<description>HDFS元数据备份文件滚动大小(SNN)/字节</description>
+	</property>
+	<property>
+		<name>io.compression.codecs</name>
+		<value>org.apache.hadoop.io.compress.DefaultCodec,com.hadoop.compression.lzo.LzoCodec,com.hadoop.compression.lzo.LzopCodec,org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.BZip2Codec,org.apache.hadoop.io.compress.SnappyCodec</name>
+		<description>HDFS压缩编解码器</description>
+	</property>
+	<property>
+		<name>io.compression.codec.lzo.class</name>
+		<value>com.hadoop.compression.lzo.LzoCodec</name>
+		<description>LZO编解码器</description>
+	</property>
+	<property>
+		<name>topology.script.file.name</name>
+		<value>/etc/hadoop/RackAware.py</name>
+		<description>机架感知脚本位置</description>
+	</property>
+	<property>
+		<name>topology.script.number.args</name>
+		<value>100</name>
+		<description>机架感知参数最大值</description>
+	</property>
+	<property>
+		<name>fs.trash.interval</name>
+		<value>4320</name>
+		<description>HDFS回收站自动清空间隔/分钟</description>
+	</property>
+	<property>
+		<name>io.file.buffer.size</name>
+		<value>131072</name>
+		<description>序列化文件处理时读写buffer大小/字节</description>
+	</property>
+	<property>
+		<name>webinterface.private.actions</name>
+		<value>false</name>
+		<description>NN网页是否可以删除目录文件</description>
+	</property>
+	<property>
+		<name>io.sort.factor</name>
+		<value>100</name>
+		<description>处理流合并时的文件排序数</description>
+	</property>
+	<property>
+		<name>io.sort.mb</name>
+		<value>200</name>
+		<description>排序使用内存大小/MB</description>
+	</property>
+	<property>
+		<name>hadoop.security.authorization</name>
+		<value>false</name>
+		<description>Hadoop服务层级验证安全验证，需配合hadoop-policy.xml使用</description>
+	</property>
+	<property>
+		<name>fs.inmemory.size.mb</name>
+		<value>300</name>
+		<description>文件系统内存映射大小</description>
+	</property>
+</configuration>

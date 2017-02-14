@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License. See accompanying LICENSE file.
+-->
+<configuration>
+	<property>
+		<name>mapred.job.tracker</name>
+		<value>{jobtracker}:9001</name>
+		<description>Jobtracker地址</description>
+	</property>
+	<property>
+		<name>mapred.local.dir</name>
+		<value>{mount_mrlocal}</name>
+		<description>MR本地使用路径</description>
+	</property>
+	<property>
+		<name>mapred.system.dir</name>
+		<value>/mapred/system</name>
+		<description>MR系统使用路径</description>
+	</property>
+	<property>
+		<name>mapred.tasktracker.map.tasks.maximum</name>
+		<value>2</name>
+		<description>服务器最大map数</description>
+	</property>
+	<property>
+		<name>mapred.tasktracker.reduce.tasks.maximum</name>
+		<value>1</name>
+		<description>服务器最大reduce数</description>
+	</property>
+	<property>
+		<name>mapred.map.child.java.opts</name>
+		<value>-Xmx256M</name>
+		<description>每map线程使用内存大小</description>
+	</property>
+	<property>
+		<name>mapred.reduce.child.java.opts</name>
+		<value>-Xmx256M</name>
+		<description>每reduce线程使用内存大小</description>
+	</property>
+	<property>
+		<name>mapred.reduce.parallel.copies</name>
+		<value>6</name>
+		<description>reduce阶段并行复制线程数</description>
+	</property>
+	<property>
+		<name>mapred.compress.map.output</name>
+		<value>true</name>
+		<description>是否对map进行压缩输出</description>
+	</property>
+	<property>
+		<name>mapred.map.output.compression.code</name>
+		<value>org.apache.hadoop.io.compress.SnappyCodec</name>
+		<description>map压缩输出使用的编码器</description>
+	</property>
+	<property>
+		<name>mapred.child.java.opts</name>
+		<value>-Xmx1024M -Xms1024M</name>
+		<description>map/red虚拟机子进程设置</description>
+	</property>
+	<property>
+		<name>mapred.jobtracker.taskScheduler</name>
+		<value>org.apache.hadoop.mapred.JobQueueTaskScheduler</name>
+		<description>hadoop使用队列</description>
+	</property>
+	<property>
+		<name>mapred.output.compress</name>
+		<value>false</name>
+		<description>是否开启任务结果压缩输出</description>
+	</property>
+	<property>
+		<name>mapred.output.compression.codec</name>
+		<value>org.apache.hadoop.io.compress.DefaultCodec</name>
+		<description>任务结果压缩输出编解码器</description>
+	</property>
+	<property>
+		<name>map.sort.class</name>
+		<value>org.apache.hadoop.util.QuickSort</name>
+		<description>map排序算法</description>
+	</property>
+	<property>
+		<name>mapred.tasktracker.expiry.interval</name>
+		<value>60000</name>
+		<description>TaskTracker存活检测时间，超出该时间则认为tasktracker死亡/毫秒</description>
+	</property>
+	<property>
+		<name>mapred.local.dir.minspacestart</name>
+		<value>1073741824</name>
+		<description>硬盘空间小于该大小则不在本地做计算/字节</description>
+	</property>
+	<property>
+		<name>mapred.local.dir.minspacekill</name>
+		<value>1073741824</name>
+		<description>硬盘空间小于该大小则不再申请新任务/字节</description>
+	</property>
+	<property>
+		<name>mapred.reduce.slowstart.completed.maps</name>
+		<value>0.05</name>
+		<description>Reduce启动所需map进度。</description>
+	</property>
+	<property>
+		<name>mapred.jobtracker.restart.recover</name>
+		<value>true</name>
+		<description>Jobtracker重启后恢复任务</description>
+	</property>
+	<property>
+		<name>mapred.job.reuse.jvm.num.tasks</name>
+		<value>-1</name>
+		<description>Map/Reduce进程使用JVM重用</description>
+	</property>
+	<property>
+		<name>mapred.local.dir.minspacekill</name>
+		<value>1073741824</name>
+		<description>磁盘小于该空间则不申请新任务</description>
+	</property>
+</configuration>

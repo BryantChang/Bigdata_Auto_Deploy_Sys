@@ -1,0 +1,3 @@
+#sparknodelist
+#format
+#host:ip:os:sshport:sshuser:sshpassword:master_(1/0):slave_(1/0):issudo_(1/0)
