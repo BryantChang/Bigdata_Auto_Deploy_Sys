@@ -55,7 +55,6 @@ public class BaseDAO {
 		}else {
 			sql = "select * from " + cl.getSimpleName().toLowerCase();
 		}
-		System.out.println(sql);
 		 return sql;
 	}
 	
