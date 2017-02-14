@@ -121,7 +121,6 @@ public class ConfigFileDao {
                 return Constants.DELERR;
             }
         }
-        System.out.println(123455);
         try {
             reader = new FileReader(filePath);
             BufferedReader br = new BufferedReader(reader);
@@ -133,7 +132,8 @@ public class ConfigFileDao {
                     String[] elms = str.split("\\s+");
                     String name = elms[0];
                     String value = elms[1];
-                    SparkSettings setting = new SparkSettings(0L, name, value, "", "spark-default.conf");
+                    System.out.println(name + ": " + value);
+                    SparkSettings setting = new SparkSettings(0L, name, value, "", "spark-defaults.conf");
                     sparkSettingDao.addSetting(setting);
                 }
             }
