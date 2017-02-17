@@ -4,7 +4,19 @@ bin=`cd "$bin"; pwd`
 DIR=`cd $bin/../; pwd`
 CONF_DIR=$DIR/conf
 LOG_DIR=$DIR/logs
+IFCONFIG_PATH=/sbin/ifconfig
 JAR=$DIR/AutoSysAgent.jar
+
+function need_ifocnfig(){
+	echo "The command ifconfig not installed, please install it!"
+}
+
+if [[ ! -f $IFCONFIG_PATH ]]; then
+	need_ifocnfig
+	exit
+fi
+
+
 echo "starting agent"
 mkdir -p $LOG_DIR
 
