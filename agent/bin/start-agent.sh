@@ -11,6 +11,7 @@ function need_ifocnfig(){
 	echo "The command ifconfig not installed, please install it!"
 }
 
+##check if ifconfig has been installed
 if [[ ! -f $IFCONFIG_PATH ]]; then
 	need_ifocnfig
 	exit
@@ -28,3 +29,5 @@ then
 fi
 
 nohup java -jar $JAR -f $CONF_DIR/agent.properties -a $ip > $LOG_DIR/agent.log &
+
+
