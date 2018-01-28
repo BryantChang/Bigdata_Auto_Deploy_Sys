@@ -5,7 +5,7 @@ DIR=`cd $bin/../; pwd`
 CONF_DIR=$DIR/conf
 LOG_DIR=$DIR/logs
 IFCONFIG_PATH=/sbin/ifconfig
-JAR=$DIR/AutoSysAgent.jar
+JAR=$DIR/deploy/AutoSysAgent.jar
 
 function need_ifocnfig(){
 	echo "The command ifconfig not installed, please install it!"
