@@ -20,8 +20,8 @@ public class ClusterController {
     ClusterService service;
 
     @RequestMapping("/admin/clustermanage/index")
-    public String clusterList(@RequestParam String userId, ModelMap map) {
-        ArrayList<Cluster> list = service.getAllClustersByUid(userId);
+    public String clusterList(@RequestParam String userid, ModelMap map) {
+        ArrayList<Cluster> list = service.getAllClustersByUid(userid);
         return Constants.JSPBASE + "clustermanage/index.jsp";
     }
 }
