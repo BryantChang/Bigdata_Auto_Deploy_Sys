@@ -53,11 +53,9 @@
 			src="/autodeploymentsys/static/js/autosys/nodeops/spark.js"
 			type="text/javascript"></script>
 	<%
-	    User user = (User) request.getAttribute("user");
 		String baseUrl = Constants.BaseUrl;
 		String hadoopHome = Constants.HADOOP_HOME;
 		String sparkHome = Constants.SPARK_HOME;
-		String userId = user.getId() + "";
 	%>
 	<script type="application/javascript">
 		var baseUrl = "<%= baseUrl%>";
@@ -78,7 +76,7 @@
 						</a> <a href="/autodeploymentsys/admin/index" class="brand">网站首页</a>
 						<div class="nav-collapse collapse navbar-responsive-collapse">
 						    <ul class="nav">
-                            	<li><a href="/autodeploymentsys/admin/clustermanage/index?userid=<%=userId%>">集群管理</a></li>
+                            	<li><a href="/autodeploymentsys/admin/clustermanage/index?userid=<%=userid%>">集群管理</a></li>
                             </ul>
 							<ul class="nav">
 								<li class="dropdown"><a data-toggle="dropdown"

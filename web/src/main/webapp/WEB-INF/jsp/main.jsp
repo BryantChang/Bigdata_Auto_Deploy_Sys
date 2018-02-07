@@ -14,7 +14,9 @@
 		</script>
 	</c:when>
 	<c:otherwise>
-		<jsp:include page="nav.jsp" />
+		<jsp:include page="nav.jsp" >
+		    <jsp:param name="userid" value="<%=user.getId() + ""%>" />
+		<jsp:include>
 		<div class="row-fluid">
 			<div class="span12">
 				<div class="hero-unit">
