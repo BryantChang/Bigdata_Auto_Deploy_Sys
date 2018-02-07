@@ -73,9 +73,10 @@
 							class="icon-bar"></span>
 						</a> <a href="/autodeploymentsys/admin/index" class="brand">网站首页</a>
 						<div class="nav-collapse collapse navbar-responsive-collapse">
+						    <ul class="nav">
+                            	<li><a href="/autodeploymentsys/admin/clustermanage/index">集群管理</a></li>
+                            </ul>
 							<ul class="nav">
-								<li><a href="/autodeploymentsys/admin/clustermanage/index">集群监控</a></li>
-							</ul></li>
 								<li class="dropdown"><a data-toggle="dropdown"
 									class="dropdown-toggle" href="">节点配置管理 <b class="caret"></b></a>
 									<ul class="dropdown-menu">
