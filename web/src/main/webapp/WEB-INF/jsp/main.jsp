@@ -6,6 +6,7 @@
 <%
 	User user = (User) request.getAttribute("user");
 	String baseUrl = Constants.BaseUrl;
+	String userid = user.getId() + "";
 %>
 <c:choose>
 	<c:when test="${user == null}">
@@ -15,7 +16,7 @@
 	</c:when>
 	<c:otherwise>
 		<jsp:include page="nav.jsp" >
-		    <jsp:param name="userid" value="<%=user.getId() + ""%>" />
+		    <jsp:param name="userid" value="<%=userid%>" />
 		<jsp:include>
 		<div class="row-fluid">
 			<div class="span12">
