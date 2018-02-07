@@ -77,10 +77,7 @@
 								<li class="dropdown"><a data-toggle="dropdown"
 									class="dropdown-toggle" href="">集群管理 <b class="caret"></b></a>
 									<ul class="dropdown-menu">
-										<li><a
-											href="/autodeploymentsys/admin/clustermanage/hadoop">Hadoop</a></li>
-										<li><a
-											href="/autodeploymentsys/admin/clustermanage/spark">Spark</a></li>
+										<li><a href="/autodeploymentsys/admin/clustermanage/index"></a></li>
 
 									</ul></li>
 								<li class="dropdown"><a data-toggle="dropdown"
