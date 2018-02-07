@@ -1,10 +1,7 @@
 <%@page import="javax.sound.midi.Soundbank"%>
 <%@ page import="com.bryantchang.autodepsys.constant.Constants" %>
-<%@page import="com.bryantchang.autodepsys.bean.User"%>
-<%
-	User user = (User) request.getAttribute("user");
-	String baseUrl = Constants.BaseUrl;
-%>
+
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
