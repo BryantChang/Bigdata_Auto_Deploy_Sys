@@ -1,5 +1,10 @@
 <%@page import="javax.sound.midi.Soundbank"%>
 <%@ page import="com.bryantchang.autodepsys.constant.Constants" %>
+<%@page import="com.bryantchang.autodepsys.bean.User"%>
+<%
+	User user = (User) request.getAttribute("user");
+	String baseUrl = Constants.BaseUrl;
+%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -74,7 +79,7 @@
 						</a> <a href="/autodeploymentsys/admin/index" class="brand">网站首页</a>
 						<div class="nav-collapse collapse navbar-responsive-collapse">
 						    <ul class="nav">
-                            	<li><a href="/autodeploymentsys/admin/clustermanage/index">集群管理</a></li>
+                            	<li><a href="/autodeploymentsys/admin/clustermanage/index?userid=<%=user.getId() %>}">集群管理</a></li>
                             </ul>
 							<ul class="nav">
 								<li class="dropdown"><a data-toggle="dropdown"

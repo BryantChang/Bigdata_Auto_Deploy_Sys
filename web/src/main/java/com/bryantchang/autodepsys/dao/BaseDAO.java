@@ -44,10 +44,19 @@ public class BaseDAO {
 			Iterator iterator = keys.iterator();
 			while(iterator.hasNext()) {
 				String key = (String) iterator.next();
-				if (iterator.hasNext()) {
-					conditionStr += key + "=" + "'" + conditions.get(key) + "'" + " and ";
+
+				if (conditions.get(key).getClass().getSimpleName().equals("String") && conditions.get(key).toString().contains(",")) {
+					if (iterator.hasNext()) {
+						conditionStr += key + " in " + "(" + conditions.get(key) + ")" + " and ";
+					}else {
+						conditionStr += key + " in " + "(" + conditions.get(key) + ")";
+					}
 				}else {
-					conditionStr += key + "=" + "'" + conditions.get(key) + "'";
+					if (iterator.hasNext()) {
+						conditionStr += key + "=" + "'" + conditions.get(key) + "'" + " and ";
+					} else {
+						conditionStr += key + "=" + "'" + conditions.get(key) + "'";
+					}
 				}
 				
 			}
@@ -78,10 +87,18 @@ public class BaseDAO {
 			Iterator iterator = keys.iterator();
 			while (iterator.hasNext()) {
 				String key = (String) iterator.next();
-				if (iterator.hasNext()) {
-					conditionStr += key + "=" + "'" + conditions.get(key) + "'" + " and ";
-				} else {
-					conditionStr += key + "=" + "'" + conditions.get(key) + "'";
+				if (conditions.get(key).getClass().getSimpleName().equals("String") && conditions.get(key).toString().contains(",")) {
+					if (iterator.hasNext()) {
+						conditionStr += key + " in " + "(" + conditions.get(key) + ")" + " and ";
+					}else {
+						conditionStr += key + " in " + "(" + conditions.get(key) + ")";
+					}
+				}else {
+					if (iterator.hasNext()) {
+						conditionStr += key + "=" + "'" + conditions.get(key) + "'" + " and ";
+					} else {
+						conditionStr += key + "=" + "'" + conditions.get(key) + "'";
+					}
 				}
 			}
 		}
@@ -188,6 +205,7 @@ public class BaseDAO {
 		ResultSet rSet = null;
 		String sql = "";
 		sql = this.getSelectSql(cl, conditions);
+//		System.out.println(sql);
 		Field[] fields = cl.getDeclaredFields();
 		try {
 			pStatement = connection.prepareStatement(sql);

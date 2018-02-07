@@ -8,7 +8,7 @@ import java.util.Map;
 public class Constants {
 
     //mysql configurations
-    public static final String MYSQL_URL = "jdbc:mysql://127.0.0.1:3306/autosys";
+    public static final String MYSQL_URL = "jdbc:mysql://centos26:3306/autosys";
     public static final String MYSQL_USR = "root";
     public static final String MYSQL_PASS = "123456";
 
