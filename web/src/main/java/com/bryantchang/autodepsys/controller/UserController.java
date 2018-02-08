@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.w3c.dom.bootstrap.DOMImplementationRegistry;
 
 import com.bryantchang.autodepsys.bean.User;
@@ -41,13 +42,13 @@ public class UserController {
 	// doLogin的action
 	@RequestMapping(value = "/doLogin", method = RequestMethod.POST)
 	public String doLogin(@RequestParam String username, @RequestParam String password, @RequestParam String vcode,
-			HttpServletRequest request, HttpServletResponse response, ModelMap map, Model model) {
+			HttpServletRequest request, HttpServletResponse response, ModelMap map, RedirectAttributes model) {
 		try {
 			String sessionCode = (String) request.getSession().getAttribute(Constants.RANDOM_CODE_KEY);
 			if (vcode.toLowerCase().equals(sessionCode.toLowerCase())) {
 				User user = service.doLogin(username, password);
 				map.put("user", user);
-				model.addAttribute("user", user);
+				map.addAttribute("user", user);
 			} else {
 				request.setAttribute("error", "验证码错误");
 				return Constants.JSPBASE + "login.jsp";
