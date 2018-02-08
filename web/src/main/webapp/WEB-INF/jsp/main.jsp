@@ -6,6 +6,7 @@
 <%
 	User user = (User) request.getAttribute("user");
 	String baseUrl = Constants.BaseUrl;
+	Long userId = user.getId();
 %>
 <c:choose>
 	<c:when test="${user == null}">
