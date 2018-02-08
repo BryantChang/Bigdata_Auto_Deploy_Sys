@@ -3,6 +3,7 @@ package com.bryantchang.autodepsys.controller;
 import java.net.URL;
 
 import javax.annotation.Resource;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sound.midi.Soundbank;
@@ -48,7 +49,10 @@ public class UserController {
 			if (vcode.toLowerCase().equals(sessionCode.toLowerCase())) {
 				User user = service.doLogin(username, password);
 				map.put("user", user);
-				map.addAttribute("user", user);
+                Cookie cookie = new Cookie("uid", user.getId()+"");
+                cookie.setMaxAge(5 * 60);
+                cookie.setPath("/");
+                response.addCookie(cookie);
 			} else {
 				request.setAttribute("error", "验证码错误");
 				return Constants.JSPBASE + "login.jsp";

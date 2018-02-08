@@ -4,9 +4,9 @@
 <%@page import="com.bryantchang.autodepsys.bean.User"%>
 <%@ page import="com.bryantchang.autodepsys.constant.Constants" %>
 <%
-	User user = (User) request.getAttribute("user");
+    String userId = (String) request.getAttribute("userid");
 	String baseUrl = Constants.BaseUrl;
-    out.println(user);
+	out.println(userId);
 %>
 <c:choose>
 	<c:when test="${user == null}">
