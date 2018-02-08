@@ -46,6 +46,7 @@ public class UserController {
 			if (vcode.toLowerCase().equals(sessionCode.toLowerCase())) {
 				User user = service.doLogin(username, password);
 				map.put("user", user);
+				request.setAttribute("user", user);
 			} else {
 				request.setAttribute("error", "验证码错误");
 				return Constants.JSPBASE + "login.jsp";
