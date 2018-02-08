@@ -24,7 +24,7 @@ public class AdminController {
 				return Constants.JSPBASE + "main.jsp";
 			}else{}
 		}
-		return Constants.JSPBASE + "login.jsp";
+		return "redirect:/";
 
 	} 
 	
