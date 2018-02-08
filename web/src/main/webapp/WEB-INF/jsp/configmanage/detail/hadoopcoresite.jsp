@@ -9,13 +9,7 @@
 %>
 
 
-<c:choose>
-  <c:when test="${user == null}">
-    <script>
-      location.href = "<%=baseUrl%>";
-    </script>
-  </c:when>
-  <c:otherwise>
+
     <jsp:include page="../../nav.jsp"/>
     <div class="row-fluid">
         <%--<div class="span2"></div>--%>
@@ -178,5 +172,3 @@
         </c:forEach>
       </div>
     </div>
-  </c:otherwise>
-</c:choose>

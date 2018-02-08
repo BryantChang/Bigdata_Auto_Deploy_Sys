@@ -4,18 +4,11 @@
 <%@page import="com.bryantchang.autodepsys.bean.User"%>
 <%@ page import="com.bryantchang.autodepsys.constant.Constants" %>
 <%
-  User user = (User) request.getAttribute("user");
   String baseUrl = Constants.BaseUrl;
 %>
 
 
-<c:choose>
-  <c:when test="${user == null}">
-    <script>
-      location.href = "<%=baseUrl%>";
-    </script>
-  </c:when>
-  <c:otherwise>
+
     <jsp:include page="../../nav.jsp"/>
     <div class="row-fluid">
         <%--<div class="span2"></div>--%>

@@ -9,7 +9,6 @@
 %>
 
     <jsp:include page="nav.jsp" >
-        <jsp:param name="userid" value="<%=userId%>" />
 	</jsp:include>
     <div class="row-fluid">
 		<div class="span12">

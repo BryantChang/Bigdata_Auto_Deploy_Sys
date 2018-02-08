@@ -14,17 +14,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
-public class AdminController {
+public class AdminController extends AbstractController{
 	@RequestMapping("/admin/index")
 	public String toIndexPage(HttpServletRequest request, HttpServletResponse response, ModelMap map){
-		Cookie[] cookies = request.getCookies();
-		for (Cookie cookie: cookies) {
-			if("uid".equals(cookie.getName())) {
-				map.put("userid", cookie.getValue());
-				return Constants.JSPBASE + "main.jsp";
-			}else{}
+		String userId = "";
+		String resPath = "";
+		userId = this.checkUser(request, response);
+		if("".equals(userId)) {
+			resPath = "redirect:/";
+		}else {
+			resPath = Constants.JSPBASE + "main.jsp";
 		}
-		return "redirect:/";
+		return resPath;
 
 	} 
 	

@@ -77,7 +77,7 @@
 						</a> <a href="/autodeploymentsys/admin/index" class="brand">网站首页</a>
 						<div class="nav-collapse collapse navbar-responsive-collapse">
 						    <ul class="nav">
-                            	<li><a href="/autodeploymentsys/admin/clustermanage/index?userid=<%=userid%>">集群管理</a></li>
+                            	<li><a href="/autodeploymentsys/admin/clustermanage/index">集群管理</a></li>
                             </ul>
 							<ul class="nav">
 								<li class="dropdown"><a data-toggle="dropdown"
