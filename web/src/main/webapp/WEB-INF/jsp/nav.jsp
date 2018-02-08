@@ -56,6 +56,7 @@
 		String baseUrl = Constants.BaseUrl;
 		String hadoopHome = Constants.HADOOP_HOME;
 		String sparkHome = Constants.SPARK_HOME;
+		userid = request.getParameter("userid");
 	%>
 	<script type="application/javascript">
 		var baseUrl = "<%= baseUrl%>";
