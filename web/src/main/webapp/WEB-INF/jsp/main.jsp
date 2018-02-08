@@ -8,8 +8,7 @@
 	String baseUrl = Constants.BaseUrl;
 %>
 
-    <jsp:include page="nav.jsp" >
-	</jsp:include>
+    <jsp:include page="nav.jsp" />
     <div class="row-fluid">
 		<div class="span12">
 			<div class="hero-unit">
