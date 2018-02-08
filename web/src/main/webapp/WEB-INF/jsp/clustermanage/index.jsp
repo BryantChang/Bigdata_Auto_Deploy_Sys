@@ -8,7 +8,7 @@
 <%
 	ArrayList<Cluster> list = (ArrayList<Cluster>) request.getAttribute("clusterlist");
 	String baseUrl = Constants.BaseUrl;
-	out.println(list.size());
+	out.println(list.get(0).getCname());
 %>
 
 
