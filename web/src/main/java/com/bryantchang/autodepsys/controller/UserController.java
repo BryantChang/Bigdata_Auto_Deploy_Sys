@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sound.midi.Soundbank;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -40,13 +41,13 @@ public class UserController {
 	// doLogin的action
 	@RequestMapping(value = "/doLogin", method = RequestMethod.POST)
 	public String doLogin(@RequestParam String username, @RequestParam String password, @RequestParam String vcode,
-			HttpServletRequest request, HttpServletResponse response, ModelMap map) {
+			HttpServletRequest request, HttpServletResponse response, ModelMap map, Model model) {
 		try {
 			String sessionCode = (String) request.getSession().getAttribute(Constants.RANDOM_CODE_KEY);
 			if (vcode.toLowerCase().equals(sessionCode.toLowerCase())) {
 				User user = service.doLogin(username, password);
 				map.put("user", user);
-				request.setAttribute("user", user);
+				model.addAttribute("user", user);
 			} else {
 				request.setAttribute("error", "验证码错误");
 				return Constants.JSPBASE + "login.jsp";
