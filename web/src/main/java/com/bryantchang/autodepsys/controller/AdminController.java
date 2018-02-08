@@ -21,9 +21,11 @@ public class AdminController {
 		for (Cookie cookie: cookies) {
 			if("uid".equals(cookie.getName())) {
 				map.put("userid", cookie.getValue());
-			}
+				return Constants.JSPBASE + "main.jsp";
+			}else{}
 		}
-		return Constants.JSPBASE + "main.jsp";
+		return Constants.JSPBASE + "login.jsp";
+
 	} 
 	
 	
