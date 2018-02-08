@@ -66,8 +66,16 @@ public class UserController {
 
 	// doLogout的action
 	@RequestMapping("doLogout")
-	public String doLogout(SessionStatus status) {
-		status.setComplete();
+	public String doLogout(HttpServletRequest request, HttpServletResponse response) {
+		Cookie[] cookies = request.getCookies();
+		for (Cookie cookie: cookies) {
+			if("uid".equals(cookie.getName())) {
+				cookie.setValue(null);
+				cookie.setMaxAge(0);
+				cookie.setPath("/");
+				response.addCookie(cookie);
+			}
+		}
 		return "redirect:/admin/index";
 	}
 
