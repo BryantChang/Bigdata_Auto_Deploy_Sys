@@ -25,7 +25,7 @@ public class ClusterManageController extends AbstractController{
             resPath = "redirect:/";
         }else {
             ArrayList<Cluster> clusterList = service.getAllClustersByUid(userId);
-            map.put("clusterList", clusterList);
+            map.put("clusterlist", clusterList);
             resPath = Constants.JSPBASE + "/clustermanage/index.jsp";
         }
         return resPath;
