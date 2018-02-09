@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 
 @Controller
-public class ClusterManageController extends AbstractController{
+public class ClusterController extends AbstractController{
     @Resource
     ClusterService service;
     @RequestMapping("/admin/clustermanage/index")

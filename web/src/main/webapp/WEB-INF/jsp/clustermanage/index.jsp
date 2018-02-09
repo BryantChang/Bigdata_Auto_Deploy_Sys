@@ -8,13 +8,74 @@
 <%
 	ArrayList<Cluster> list = (ArrayList<Cluster>) request.getAttribute("clusterlist");
 	String baseUrl = Constants.BaseUrl;
-	out.println(list.get(0).getCname());
 %>
 
 
 
 <jsp:include page="../nav.jsp" />
+<div class="row-fluid">
+	<div class="span2">
+		<a id="modal-694172" href="#addCluster" role="button"
+		   class="btn btn-primary btn-block" data-toggle="modal">添加集群</a>
 
+		<div id="addCluster" class="modal hide fade" role="dialog"
+			 aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">×</button>
+				<h3 id="myModalLabel">添加集群</h3>
+			</div>
+			<div class="modal-body">
+				<div class="alert alert-info">
+					增加集群，需要用户填写，集群的名称以及描述。
+				</div>
+				<form class="form-horizontal">
+					<div class="control-group">
+						<label class="control-label" for="hostname">主机名</label>
+						<div class="controls">
+							<input type="text" id="hostname" placeholder="主机名">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="ip">IP地址</label>
+						<div class="controls">
+							<input type="text" id="ip" placeholder="IP地址">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="os">操作系统</label>
+						<div class="controls">
+							<input type="text" id="os" placeholder="操作系统">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="sshuser">节点SSH用户</label>
+						<div class="controls">
+							<input type="text" id="sshuser" placeholder="节点SSH用户">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="sshpass">节点SSH密码</label>
+						<div class="controls">
+							<input type="text" id="sshpass" placeholder="节点SSH密码">
+						</div>
+					</div>
+					<div class="control-group">
+						<label class="control-label" for="sshport">节点SSH端口</label>
+						<div class="controls">
+							<input type="text" id="sshport" placeholder="节点SSH端口">
+						</div>
+					</div>
+
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+				<button id="submitAddHadoopNode" class="btn btn-primary">添加</button>
+			</div>
+		</div>
+	</div>
+</div>
 
 </div>
 </html>
