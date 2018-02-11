@@ -119,7 +119,7 @@
                             <div class="control-group">
 								<label class="control-label" for="desc_${cluster.id}">集群类型</label>
 								<div class="controls">
-									<select id="infoid_${cluster.id}" class="form-control">
+									<select class="form-control">
 										<c:forEach items="${clusterinfomap}" var="info">
 											<option value="${info.key}">${info.value}</option>
 										</c:forEach>
