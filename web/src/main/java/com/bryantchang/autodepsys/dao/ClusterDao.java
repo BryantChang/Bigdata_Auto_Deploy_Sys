@@ -66,17 +66,17 @@ public class ClusterDao extends BaseDAO{
         return list;
     }
 
-
+//
 //    public static void main(String[] args) {
-////        String userId = "2";
-////        ArrayList<Cluster> clusterList = new ClusterDao().getAllClustersByUid(userId);
-//////        ArrayList<Long> clusterIds = new ClusterDao().getAllClusterIdsByUid(userId);
-////        for (int i = 0; i < clusterList.size(); i++) {
-////            System.out.println(clusterList.get(i).getCname());
-////        }
-//        ArrayList<ClusterInfo> list = new ClusterDao().getClusterInfoList();
-//        for (int i = 0; i < list.size(); i++) {
-//            System.out.println(list.get(i).getName());
+//        String userId = "2";
+//        ArrayList<Cluster> clusterList = new ClusterDao().getAllClustersByUid(userId);
+////        ArrayList<Long> clusterIds = new ClusterDao().getAllClusterIdsByUid(userId);
+//        for (int i = 0; i < clusterList.size(); i++) {
+//            System.out.println(clusterList.get(i).getCname());
 //        }
+////        ArrayList<ClusterInfo> list = new ClusterDao().getClusterInfoList();
+////        for (int i = 0; i < list.size(); i++) {
+////            System.out.println(list.get(i).getName());
+////        }
 //    }
 }
