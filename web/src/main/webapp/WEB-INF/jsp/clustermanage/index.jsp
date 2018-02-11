@@ -71,9 +71,9 @@
                     <c:forEach items="${clusterlist}" var="cluster" varStatus="no">
                         <tr>
                             <td>${no.count}</td>
-                            <td>${cluster['cname']}</td>
-                            <td>${cluster['desc']}</td>
-                            <td>${clusterinfomap[${cluster['infoid']}]}</td>
+                            <td>${cluster.cname}</td>
+                            <td>${cluster.desc}</td>
+                            <td>${clusterinfomap[cluster.infoid]}</td>
                         </tr>
                     </c:forEach>
                 </tbody>
