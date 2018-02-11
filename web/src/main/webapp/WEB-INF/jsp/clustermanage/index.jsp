@@ -117,13 +117,16 @@
 							</div>
 
                             <div class="control-group">
-                                <select class="form-control">
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                </select>
+								<label class="control-label" for="desc_${cluster.id}">集群类型</label>
+								<div class="controls">
+									<select class="form-control">
+										<option>1</option>
+										<option>2</option>
+										<option>3</option>
+										<option>4</option>
+										<option>5</option>
+									</select>
+								</div>
                             </div>
 
 							<input type="hidden" id="curCluster" value="${cluster.id}"/>
