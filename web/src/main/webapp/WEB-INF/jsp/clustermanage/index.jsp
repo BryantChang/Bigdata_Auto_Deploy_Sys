@@ -91,7 +91,7 @@
 
 			<c:forEach items="${clusterlist}" var="cluster"
 					   varStatus="no">
-				<div id="update_hadoop_node_${cluster.id}"
+				<div id="update_cluster_${cluster.id}"
 					 class="modal hide fade" tabindex="-1" role="dialog"
 					 aria-labelledby="myModalLabel" aria-hidden="true">
 					<div class="modal-header">
