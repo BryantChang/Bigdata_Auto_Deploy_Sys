@@ -226,9 +226,8 @@ public class BaseDAO {
 		}
 		return list;
 	}
-	
 
-	
+
 	public boolean insert(Object object) {
 		boolean succ = false;
 		Connection conn = BaseConnection.getConnection();

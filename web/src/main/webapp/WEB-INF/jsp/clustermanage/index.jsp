@@ -75,9 +75,57 @@
                             <td>${cluster.desc}</td>
                             <td>${clusterinfomap[cluster.infoid]}</td>
 							<td>${cluster.ctime}</td>
+							<td>
+								<div class="btn-group">
+									<a class="btn" href="#update_cluster_${cluster.id}"
+									   data-toggle="modal"><i class="icon-wrench"></i> 修改节点</a> <a
+										class="btn btn-danger"
+										href="#delete_cluster_${cluster.id}"
+										data-toggle="modal"><i class="icon-remove"></i> 删除节点</a>
+								</div>
+							</td>
                         </tr>
                     </c:forEach>
                 </tbody>
+			</table>
+
+			<c:forEach items="${clusterlist}" var="cluster"
+					   varStatus="no">
+				<div id="update_hadoop_node_${cluster.id}"
+					 class="modal hide fade" tabindex="-1" role="dialog"
+					 aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal"
+								aria-hidden="true">×</button>
+						<h3 id="myModalLabel">修改节点</h3>
+					</div>
+					<div class="modal-body">
+						<form class="form-horizontal">
+							<div class="control-group">
+								<label class="control-label" for="cname_${cluster.id}">集群名称</label>
+								<div class="controls">
+									<input type="text" id="cname_${cluster.id}" placeholder="集群名称"
+										   value="${cluster.cname}">
+								</div>
+							</div>
+							<div class="control-group">
+								<label class="control-label" for="desc_${cluster.id}">集群描述</label>
+								<div class="controls">
+									<input type="text" id="desc_${cluster.id}" placeholder="集群描述"
+										   value="${cluster.desc}">
+								</div>
+							</div>
+
+							<input type="hidden" id="curCluster" value="${cluster.id}"/>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+						<button update="${cluster.id}" class="btn btn-primary submitUpdateCluster">保存</button>
+					</div>
+				</div>
+			</c:forEach>
+
         </c:if>
     </div>
 </div>
