@@ -73,7 +73,7 @@
                             <td>${no.count}</td>
                             <td>${cluster['cname']}</td>
                             <td>${cluster['desc']}</td>
-                            <td>${clusterinfomap[$cluster['infoid']]}</td>
+                            <td>${clusterinfomap['1']}</td>
                         </tr>
                     </c:forEach>
                 </tbody>
