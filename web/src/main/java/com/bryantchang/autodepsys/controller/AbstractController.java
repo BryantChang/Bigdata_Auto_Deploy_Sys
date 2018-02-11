@@ -33,7 +33,7 @@ public class AbstractController {
         list = dao.getClusterInfoList();
         HashMap<Long, String> infoMap = new HashMap<>();
         for (int i = 0; i < list.size(); i++) {
-            infoMap.put(Long.parseLong(list.get(i).getId() + ""), list.get(i).getName());
+            infoMap.put(Long.valueOf(list.get(i).getId()+""), list.get(i).getName());
         }
         return infoMap;
     }
