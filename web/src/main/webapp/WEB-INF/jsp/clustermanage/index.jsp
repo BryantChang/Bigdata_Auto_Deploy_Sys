@@ -9,7 +9,7 @@
 <%
 	ArrayList<Cluster> list = (ArrayList<Cluster>) request.getAttribute("clusterlist");
 	String baseUrl = Constants.BaseUrl;
-    HashMap<Integer, String> clusterMap = (HashMap<Integer, String>) request.getAttribute("clusterinfomap");
+    HashMap<Long, String> clusterMap = (HashMap<Long, String>) request.getAttribute("clusterinfomap");
 %>
 
 
