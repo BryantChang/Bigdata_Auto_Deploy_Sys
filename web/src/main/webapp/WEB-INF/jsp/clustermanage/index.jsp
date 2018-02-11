@@ -31,39 +31,15 @@
 				</div>
 				<form class="form-horizontal">
 					<div class="control-group">
-						<label class="control-label" for="hostname">主机名</label>
+						<label class="control-label" for="clustername">集群名称</label>
 						<div class="controls">
-							<input type="text" id="hostname" placeholder="主机名">
+							<input type="text" id="clustername" placeholder="集群名称">
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="ip">IP地址</label>
+						<label class="control-label" for="desc"></label>
 						<div class="controls">
-							<input type="text" id="ip" placeholder="IP地址">
-						</div>
-					</div>
-					<div class="control-group">
-						<label class="control-label" for="os">操作系统</label>
-						<div class="controls">
-							<input type="text" id="os" placeholder="操作系统">
-						</div>
-					</div>
-					<div class="control-group">
-						<label class="control-label" for="sshuser">节点SSH用户</label>
-						<div class="controls">
-							<input type="text" id="sshuser" placeholder="节点SSH用户">
-						</div>
-					</div>
-					<div class="control-group">
-						<label class="control-label" for="sshpass">节点SSH密码</label>
-						<div class="controls">
-							<input type="text" id="sshpass" placeholder="节点SSH密码">
-						</div>
-					</div>
-					<div class="control-group">
-						<label class="control-label" for="sshport">节点SSH端口</label>
-						<div class="controls">
-							<input type="text" id="sshport" placeholder="节点SSH端口">
+							<input type="text" id="desc" placeholder="集群名称">
 						</div>
 					</div>
 

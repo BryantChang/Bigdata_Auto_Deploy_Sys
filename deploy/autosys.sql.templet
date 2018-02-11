@@ -24,11 +24,44 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 
 --
--- 表的结构 `hadoopnode`
+-- 表的结构 `cluster`
 --
 
-DROP TABLE IF EXISTS `hadoopnode`;
-CREATE TABLE IF NOT EXISTS `hadoopnode` (
+DROP TABLE IF EXISTS `cluster`;
+CREATE TABLE IF NOT EXISTS `cluster` (
+  `id` int(10) NOT NULL auto_increment,
+  `cname` varchar(20) NOT NULL,
+  `desc` text NOT NULL DEFAULT '',
+  `ctime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+
+-- 
+-- 表的结构 `usercluster`
+--
+
+DROP TABLE IF EXISTS `usercluster`;
+CREATE TABLE IF NOT EXISTS `usercluster` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `userid` int(10) NOT NULL,
+  `clusterid` int(10) NOT NULL,
+  `ctime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+
+
+--
+-- 表的结构 `node`
+--
+
+DROP TABLE IF EXISTS `node`;
+CREATE TABLE IF NOT EXISTS `node` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `hostname` varchar(100) NOT NULL COMMENT '主机名',
   `ip` varchar(15) NOT NULL COMMENT 'ip地址',
@@ -36,7 +69,21 @@ CREATE TABLE IF NOT EXISTS `hadoopnode` (
   `sshport` int NOT NULL COMMENT 'ssh端口号',
   `sshuser` varchar(30) NOT NULL COMMENT 'ssh用户',
   `sshpass` varchar(30) NOT NULL COMMENT '密码',
-  `issudo` tinyint(1) NOT NULL,
+  `ctime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`,`hostname`,`ip`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+-- --------------------------------------------------------
+
+
+--
+-- 表的结构 `hadoopnode`
+--
+
+DROP TABLE IF EXISTS `hadoopnode`;
+CREATE TABLE IF NOT EXISTS `hadoopnode` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `nodeid`
   `namenode` tinyint(1) NOT NULL COMMENT '是否为namenode--0:false,1:true',
   `datanode` tinyint(1) NOT NULL COMMENT '是否为datanode--0:false,1:true',
   `secondarynamenode` tinyint(1) NOT NULL,
