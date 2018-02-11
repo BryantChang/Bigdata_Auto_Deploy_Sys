@@ -5,9 +5,11 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@page import="com.bryantchang.autodepsys.bean.User"%>
 <%@ page import="com.bryantchang.autodepsys.constant.Constants" %>
+<%@ page import="java.util.HashMap" %>
 <%
 	ArrayList<Cluster> list = (ArrayList<Cluster>) request.getAttribute("clusterlist");
 	String baseUrl = Constants.BaseUrl;
+    HashMap<Integer, String> clusterMap = (HashMap<Integer, String>) request.getAttribute("clusterinfomap");
 %>
 
 
@@ -60,6 +62,7 @@
                     <th>编号</th>
                     <th>集群名称</th>
                     <th>集群描述</th>
+                    <th>集群类型</th>
                     <th>创建时间</th>
                     <th>操作</th>
                 </tr>
@@ -70,6 +73,7 @@
                             <td>${no.count}</td>
                             <td>${cluster['cname']}</td>
                             <td>${cluster['desc']}</td>
+                            <td><%= clusterMap.get("${cluster['infoid']}")%></td>
                         </tr>
                     </c:forEach>
                 </tbody>

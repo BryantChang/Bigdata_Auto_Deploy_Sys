@@ -11,6 +11,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 @Controller
 public class ClusterController extends AbstractController{
@@ -25,11 +26,12 @@ public class ClusterController extends AbstractController{
             resPath = "redirect:/";
         }else {
             ArrayList<Cluster> clusterList = service.getAllClustersByUid(userId);
+            HashMap<Integer, String> infoMap = getClusterInfoMap();
             map.put("clusterlist", clusterList);
+            map.put("clusterinfomap", infoMap);
             resPath = Constants.JSPBASE + "/clustermanage/index.jsp";
         }
         return resPath;
-
     }
 
 }

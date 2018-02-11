@@ -6,16 +6,18 @@ public class Cluster {
     private Integer id = null;
     private String cname = null;
     private String desc = null;
+    private Integer infoid = null;
     private Timestamp ctime = null;
 
 
     public Cluster() {
     }
 
-    public Cluster(Integer id, String cname, String desc, Timestamp ctime) {
+    public Cluster(Integer id, String cname, String desc, Integer infoid, Timestamp ctime) {
         this.id = id;
         this.cname = cname;
         this.desc = desc;
+        this.infoid = infoid;
         this.ctime = ctime;
     }
 
@@ -41,6 +43,14 @@ public class Cluster {
 
     public void setDesc(String desc) {
         this.desc = desc;
+    }
+
+    public Integer getInfoid() {
+        return infoid;
+    }
+
+    public void setInfoid(Integer infoid) {
+        this.infoid = infoid;
     }
 
     public Timestamp getCtime() {

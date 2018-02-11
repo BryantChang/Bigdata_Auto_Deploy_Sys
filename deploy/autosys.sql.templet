@@ -23,6 +23,23 @@ CREATE TABLE IF NOT EXISTS `user` (
 -- --------------------------------------------------------
 
 
+
+--
+-- 表的结构 `clusterinfo`
+--
+
+
+DROP TABLE IF EXISTS `clusterinfo`;
+CREATE TABLE IF NOT EXISTS `clusterinfo` (
+  `id` int(10) NOT NULL auto_increment,
+  `name` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+
+
 --
 -- 表的结构 `cluster`
 --
@@ -37,6 +54,8 @@ CREATE TABLE IF NOT EXISTS `cluster` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
+
+
 
 
 -- 
