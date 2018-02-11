@@ -6,14 +6,14 @@ public class Cluster {
     private Integer id = null;
     private String cname = null;
     private String desc = null;
-    private Integer infoid = null;
+    private Long infoid = null;
     private Timestamp ctime = null;
 
 
     public Cluster() {
     }
 
-    public Cluster(Integer id, String cname, String desc, Integer infoid, Timestamp ctime) {
+    public Cluster(Integer id, String cname, String desc, Long infoid, Timestamp ctime) {
         this.id = id;
         this.cname = cname;
         this.desc = desc;
@@ -45,11 +45,11 @@ public class Cluster {
         this.desc = desc;
     }
 
-    public Integer getInfoid() {
+    public Long getInfoid() {
         return infoid;
     }
 
-    public void setInfoid(Integer infoid) {
+    public void setInfoid(Long infoid) {
         this.infoid = infoid;
     }
 
