@@ -48,7 +48,7 @@
 			</div>
 			<div class="modal-footer">
 				<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
-				<button id="submitAddHadoopNode" class="btn btn-primary">添加</button>
+				<button id="submitAddCluster" class="btn btn-primary">添加</button>
 			</div>
 		</div>
 	</div>
