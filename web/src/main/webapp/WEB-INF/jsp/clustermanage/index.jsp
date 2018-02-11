@@ -65,7 +65,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                    <c:forEach items="${clusterlist}" var="${cluster}" varStatus="no">
+                    <c:forEach items="${clusterlist}" var="cluster" varStatus="no">
                         <tr>
                             <td>${no.count}</td>
                             <td>${cluster['cname']}</td>
