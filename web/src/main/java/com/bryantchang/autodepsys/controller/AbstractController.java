@@ -28,12 +28,12 @@ public class AbstractController {
         return res;
     }
 
-    public HashMap<Integer, String> getClusterInfoMap() {
+    public HashMap<Long, String> getClusterInfoMap() {
         ArrayList<ClusterInfo> list = new ArrayList<>();
         list = dao.getClusterInfoList();
-        HashMap<Integer, String> infoMap = new HashMap<>();
+        HashMap<Long, String> infoMap = new HashMap<>();
         for (int i = 0; i < list.size(); i++) {
-            infoMap.put(list.get(i).getId(), list.get(i).getName());
+            infoMap.put(Long.parseLong(list.get(i).getId() + ""), list.get(i).getName());
         }
         return infoMap;
     }
