@@ -74,6 +74,7 @@
                             <td>${cluster.cname}</td>
                             <td>${cluster.desc}</td>
                             <td>${clusterinfomap[cluster.infoid]}</td>
+							<td>${cluster.ctime}</td>
                         </tr>
                     </c:forEach>
                 </tbody>
