@@ -17,7 +17,6 @@
 	<div class="span2">
 		<a id="modal-694172" href="#addCluster" role="button"
 		   class="btn btn-primary btn-block" data-toggle="modal">添加集群</a>
-
 		<div id="addCluster" class="modal hide fade" role="dialog"
 			 aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-header">
@@ -37,9 +36,9 @@
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="desc"></label>
+						<label class="control-label" for="desc">集群描述</label>
 						<div class="controls">
-							<input type="text" id="desc" placeholder="集群名称">
+							<input type="text" id="desc" placeholder="集群描述">
 						</div>
 					</div>
 
@@ -51,6 +50,31 @@
 			</div>
 		</div>
 	</div>
+
+    <div class="span10">
+        <c:if test="${list.size() != 0}">
+            <h3 align="center">我的集群列表</h3>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>集群名称</th>
+                    <th>集群描述</th>
+                    <th>创建时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <c:forEach items="${clusterlist}" var="${cluster}" varStatus="no">
+                        <tr>
+                            <td>${no.count}</td>
+                            <td>${cluster['cname']}</td>
+                            <td>${cluster['desc']}</td>
+                        </tr>
+                    </c:forEach>
+                </tbody>
+        </c:if>
+    </div>
 </div>
 
 </div>
