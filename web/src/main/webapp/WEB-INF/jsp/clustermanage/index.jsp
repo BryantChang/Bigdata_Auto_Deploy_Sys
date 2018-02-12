@@ -47,7 +47,9 @@
 						<label class="control-label" for="infoid">集群类型</label>
 						<div class="controls">
 							<select id="infoid" class="form-control">
-								<option value="${info.key}">${info.value}</option>
+								<c:forEach items="${clusterinfomap}" var="info">
+									<option value="${info.key}">${info.value}</option>
+								</c:forEach>
 							</select>
 						</div>
 					</div>
