@@ -52,6 +52,9 @@
 	<script
 			src="/autodeploymentsys/static/js/autosys/nodeops/spark.js"
 			type="text/javascript"></script>
+	<script
+			src="/autodeploymentsys/static/js/autosys/clustermanager/clusterops.js"
+			type="text/javascript"></script>
 	<%
 		String baseUrl = Constants.BaseUrl;
 		String hadoopHome = Constants.HADOOP_HOME;

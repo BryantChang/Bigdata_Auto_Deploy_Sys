@@ -43,6 +43,14 @@
 							<input type="text" id="desc" placeholder="集群描述">
 						</div>
 					</div>
+					<div class="control-group">
+						<label class="control-label" for="infoid">集群类型</label>
+						<div class="controls">
+							<select id="infoid" class="form-control">
+								<option value="${info.key}">${info.value}</option>
+							</select>
+						</div>
+					</div>
 
 				</form>
 			</div>
@@ -121,7 +129,14 @@
 								<div class="controls">
 									<select id="infoid_${cluster.id}" class="form-control">
 										<c:forEach items="${clusterinfomap}" var="info">
-											<option value="${info.key}">${info.value}</option>
+											<c:choose>
+												<c:when test="${cluster.infoid == info.key}">
+													<option value="${info.key}" selected="selected">${info.value}</option>
+												</c:when>
+												<c:otherwise>
+													<option value="${info.key}">${info.value}</option>
+												</c:otherwise>
+											</c:choose>
 										</c:forEach>
 									</select>
 								</div>
