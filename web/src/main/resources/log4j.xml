@@ -12,7 +12,7 @@
 
     <!-- [公共Appender] -->
     <appender name="DEFAULT-APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="File" value="/home/b302/bryantchang/tools/apache-tomcat-8.5.8/logs/common-default.log" />
+        <param name="File" value="/home/zc/bryantchang/logs/web_logs/apache-tomcat-8.5.8/logs/common-default.log" />
         <param name="Append" value="true" />
         <param name="encoding" value="GBK" />
         <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
@@ -23,7 +23,7 @@
 
     <!-- [错误日志APPENDER] -->
     <appender name="ERROR-APPENDER" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="File" value="home/bryantchang/allfiles/tools/apache-tomcat-8.5.8/logs/common-error.log" />
+        <param name="File" value="/home/zc/bryantchang/logs/web_logs/apache-tomcat-8.5.8/logs/common-error.log" />
         <param name="Append" value="true" />
         <param name="encoding" value="GBK" />
         <param name="threshold" value="error" />
@@ -36,7 +36,7 @@
     <!-- [组件日志APPENDER] -->
     <appender name="COMPONENT-APPENDER"
               class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="File" value="home/bryantchang/allfiles/tools/apache-tomcat-8.5.8/logs/logistics-component.log" />
+        <param name="File" value="/home/zc/bryantchang/logs/web_logs/apache-tomcat-8.5.8/logs/logistics-component.log" />
         <param name="Append" value="true" />
         <param name="encoding" value="GBK" />
         <param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
