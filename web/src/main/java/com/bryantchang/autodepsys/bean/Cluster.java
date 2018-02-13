@@ -37,12 +37,12 @@ public class Cluster {
         this.cname = cname;
     }
 
-    public String getDes() {
+    public String getDesc() {
         return desc;
     }
 
-    public void setDes(String des) {
-        this.desc = des;
+    public void setDesc(String desc) {
+        this.desc = desc;
     }
 
     public Long getInfoid() {
