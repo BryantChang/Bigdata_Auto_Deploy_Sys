@@ -79,8 +79,8 @@ public class Constants {
     public static final Long UPDATEERR = 100002L;
     public static final Long DELERR = 100003L;
 
-    //Not login
-    public static final Long NOTLOGIN = 600001L;
+    //INCOMPLETED PARAMS
+    public static final Long INCOMPLETED = 600001L;
 
     //file writer exceptions
     public static final Long IOERROR = 500001L;

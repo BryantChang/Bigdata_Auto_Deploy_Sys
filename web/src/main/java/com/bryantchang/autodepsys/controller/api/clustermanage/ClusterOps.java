@@ -26,12 +26,12 @@ public class ClusterOps extends AbstractController{
     @RequestMapping(value="/api/clustermanager/addcluster", method = {RequestMethod.POST, RequestMethod.GET})
     public Response addCluster(@RequestParam(value="clustername") String clustername,
                                @RequestParam(value="cdesc") String desc,
-                               @RequestParam(value="infoid") String infoid, HttpServletRequest request, HttpServletResponse response){
-        String userId = this.checkUser(request, response);
-        if ("".equals(userId)) {
-            return new Response(Constants.NOTLOGIN, "not login", null);
+                               @RequestParam(value="infoid") String infoid,
+                               @RequestParam(value = "userid", defaultValue = "") String userid){
+        if ("".equals(userid)) {
+            return new Response(Constants.INCOMPLETED, "Incompeleted param", null);
         }else {
-            Cluster res = service.addCluster(clustername, desc, infoid, userId);
+            Cluster res = service.addCluster(clustername, desc, infoid, userid);
             if (res != null) {
                 return new Response(Constants.SUCC, "", res);
             } else {

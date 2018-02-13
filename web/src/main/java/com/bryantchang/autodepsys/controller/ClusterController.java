@@ -29,6 +29,7 @@ public class ClusterController extends AbstractController{
             HashMap<Long, String> infoMap = getClusterInfoMap();
             map.put("clusterlist", clusterList);
             map.put("clusterinfomap", infoMap);
+            map.put("userid", userId);
             resPath = Constants.JSPBASE + "/clustermanage/index.jsp";
         }
         return resPath;

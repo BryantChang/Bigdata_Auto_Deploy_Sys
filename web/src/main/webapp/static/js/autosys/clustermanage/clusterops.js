@@ -3,10 +3,12 @@ $(document).ready(function(){
         var clustername = $('#clustername').val();
         var cdesc = $('#cdesc').val();
         var infoid = $('#infoid').val();
+        var userid = $('#curUser').val();
         var data = {
             "clustername": clustername,
             "cdesc": cdesc,
-            "infoid": infoid
+            "infoid": infoid,
+            "userid": userid
         };
         $.ajax({
             type: 'POST',

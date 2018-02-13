@@ -53,7 +53,6 @@
 							</select>
 						</div>
 					</div>
-
 				</form>
 			</div>
 			<div class="modal-footer">
@@ -145,6 +144,7 @@
                             </div>
 
 							<input type="hidden" id="curCluster" value="${cluster.id}"/>
+							<input type="hidden" id="curUser" value="${userid}"/>
 						</form>
 					</div>
 					<div class="modal-footer">
