@@ -251,6 +251,7 @@ public class BaseDAO {
 					continue;
 				}
 				ps.setObject(index, fields[i].get(object));
+				logger.info("index=" + index + "field=" + fields[i].get(object));
 				index++;
 			}
 			int res = ps.executeUpdate();
