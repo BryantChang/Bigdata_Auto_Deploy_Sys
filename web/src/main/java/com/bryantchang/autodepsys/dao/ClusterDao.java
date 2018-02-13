@@ -66,6 +66,16 @@ public class ClusterDao extends BaseDAO{
         return list;
     }
 
+    public Cluster addCluster(Cluster cluster) {
+        boolean res = false;
+        res = this.insert(cluster);
+        if(res == true) {
+            return cluster;
+        }else {
+            return null;
+        }
+    }
+
 //
 //    public static void main(String[] args) {
 //        String userId = "2";

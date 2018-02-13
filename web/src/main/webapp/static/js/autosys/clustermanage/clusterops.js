@@ -1,5 +1,7 @@
 $(document).ready(function(){
     $('#submitAddCluster').click(function(){
-        val
+        var clustername = $('#clustername').val();
+        var desc = $('#desc').val();
+        // var
     });
 });
