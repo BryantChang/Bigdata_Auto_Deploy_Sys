@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 public class Cluster {
     private Integer id = null;
     private String cname = null;
-    private String des = null;
+    private String desc = null;
     private Long infoid = null;
     private Timestamp ctime = null;
 
@@ -13,10 +13,10 @@ public class Cluster {
     public Cluster() {
     }
 
-    public Cluster(Integer id, String cname, String des, Long infoid, Timestamp ctime) {
+    public Cluster(Integer id, String cname, String desc, Long infoid, Timestamp ctime) {
         this.id = id;
         this.cname = cname;
-        this.des = des;
+        this.desc = desc;
         this.infoid = infoid;
         this.ctime = ctime;
     }
@@ -38,11 +38,11 @@ public class Cluster {
     }
 
     public String getDes() {
-        return des;
+        return desc;
     }
 
     public void setDes(String des) {
-        this.des = des;
+        this.desc = des;
     }
 
     public Long getInfoid() {
@@ -64,6 +64,6 @@ public class Cluster {
 
     @Override
     public String toString() {
-        return "id=" + this.id + ", cname=" + this.cname + ", des=" + this.des + ", infoid=" + this.infoid;
+        return "id=" + this.id + ", cname=" + this.cname + ", des=" + this.desc + ", infoid=" + this.infoid;
     }
 }
