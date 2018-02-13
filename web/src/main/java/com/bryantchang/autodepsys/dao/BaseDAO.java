@@ -261,7 +261,7 @@ public class BaseDAO {
 		}finally{
 			BaseConnection.closeRes(conn, ps);
 		}
-		logger.info("pk: " + primaryKey);
+		logger.info("pk of" + object.getClass().getSimpleName().toLowerCase() + ":" + primaryKey);
 		return primaryKey;
 	}
 	
