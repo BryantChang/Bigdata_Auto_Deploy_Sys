@@ -2,7 +2,6 @@ package com.bryantchang.autodepsys.controller.api.clustermanage;
 
 
 import com.bryantchang.autodepsys.bean.Cluster;
-import com.bryantchang.autodepsys.common.Response;
 import com.bryantchang.autodepsys.constant.Constants;
 import com.bryantchang.autodepsys.service.ClusterService;
 import org.springframework.stereotype.Controller;
@@ -31,6 +30,44 @@ public class ClusterOps {
             return new Response(Constants.SUCC, "", res);
         }else {
             return new Response(Constants.ADDERR, "", null);
+        }
+    }
+
+    static class Response {
+        long code = 0L;
+        private String msg = "";
+        Cluster data = null;
+
+        public Response(){}
+
+        public Response(long code, String msg, Cluster data) {
+            this.code = code;
+            this.msg = msg;
+            this.data = data;
+        }
+
+        public long getCode() {
+            return code;
+        }
+
+        public void setCode(long code) {
+            this.code = code;
+        }
+
+        public String getMsg() {
+            return msg;
+        }
+
+        public void setMsg(String msg) {
+            this.msg = msg;
+        }
+
+        public Cluster getData() {
+            return data;
+        }
+
+        public void setData(Cluster data) {
+            this.data = data;
         }
     }
 }
