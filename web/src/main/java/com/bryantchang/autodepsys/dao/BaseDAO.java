@@ -210,6 +210,7 @@ public class BaseDAO {
 		ResultSet rSet = null;
 		String sql = "";
 		sql = this.getSelectSql(cl, conditions);
+		logger.info("getList:" + sql);
 //		System.out.println(sql);
 		Field[] fields = cl.getDeclaredFields();
 		try {
