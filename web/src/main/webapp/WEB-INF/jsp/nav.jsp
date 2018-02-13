@@ -47,7 +47,7 @@
 			src="/autodeploymentsys/static/js/autosys/nodeops/spark.js"
 			type="text/javascript"></script>
 	<script
-			src="/autodeploymentsys/static/js/autosys/clustermanager/clusterops.js"
+			src="/autodeploymentsys/static/js/autosys/clustermanage/clusterops.js"
 			type="text/javascript"></script>
 	<%
 		String baseUrl = Constants.BaseUrl;
