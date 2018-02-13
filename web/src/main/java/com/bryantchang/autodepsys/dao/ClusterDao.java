@@ -61,6 +61,7 @@ public class ClusterDao extends BaseDAO{
         conditions.put("id", idStr);
         ArrayList<Cluster> clusterList = new ArrayList<Cluster>();
         clusterList = getList(Cluster.class, conditions);
+        logger.info("size:" + clusterList.size());
         return clusterList;
     }
 
