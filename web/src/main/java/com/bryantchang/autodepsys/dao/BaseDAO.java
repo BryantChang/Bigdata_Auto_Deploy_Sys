@@ -244,7 +244,6 @@ public class BaseDAO {
 		Field[] fields = cl.getDeclaredFields();
 		int index = 1;
 		String sql = this.getInsertPreparedSql(object);
-		logger.info(sql);
 		try {
 			ps = conn.prepareStatement(sql);
 			for(int i = 0; i < fields.length; i++){
@@ -258,6 +257,7 @@ public class BaseDAO {
 			int res = ps.executeUpdate();
 			if(res > 0) {
 				rs = ps.getGeneratedKeys();
+				rs.next();
 				primaryKey = rs.getLong(1);
 			}
 		} catch (Exception e) {
