@@ -62,4 +62,8 @@ public class Cluster {
     }
 
 
+    @Override
+    public String toString() {
+        return "id:" + this.id + ", cname=" + this.cname + ", desc" + this.desc + ", infoid" + this.infoid;
+    }
 }
