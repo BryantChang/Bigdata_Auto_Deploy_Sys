@@ -38,9 +38,9 @@
 						</div>
 					</div>
 					<div class="control-group">
-						<label class="control-label" for="desc">集群描述</label>
+						<label class="control-label" for="cdesc">集群描述</label>
 						<div class="controls">
-							<input type="text" id="desc" placeholder="集群描述">
+							<input type="text" id="cdesc" placeholder="集群描述">
 						</div>
 					</div>
 					<div class="control-group">
@@ -82,7 +82,7 @@
                         <tr>
                             <td>${no.count}</td>
                             <td>${cluster.cname}</td>
-                            <td>${cluster.desc}</td>
+                            <td>${cluster.cdesc}</td>
                             <td>${clusterinfomap[cluster.infoid]}</td>
 							<td>${cluster.ctime}</td>
 							<td>
@@ -119,9 +119,9 @@
 								</div>
 							</div>
 							<div class="control-group">
-								<label class="control-label" for="desc_${cluster.id}">集群描述</label>
+								<label class="control-label" for="cdesc_${cluster.cdesc}">集群描述</label>
 								<div class="controls">
-									<input type="text" id="desc_${cluster.id}" placeholder="集群描述"
+									<input type="text" id="cdesc_${cluster.cdesc}" placeholder="集群描述"
 										   value="${cluster.desc}">
 								</div>
 							</div>
