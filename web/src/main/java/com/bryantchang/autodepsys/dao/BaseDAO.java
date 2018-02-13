@@ -265,6 +265,7 @@ public class BaseDAO {
 		}finally{
 			BaseConnection.closeRes(conn, ps);
 		}
+		logger.info("pk: " + primaryKey);
 		return primaryKey;
 	}
 	
