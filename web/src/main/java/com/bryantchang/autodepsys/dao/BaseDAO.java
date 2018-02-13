@@ -1,11 +1,7 @@
 package com.bryantchang.autodepsys.dao;
 
 import java.lang.reflect.Field;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLClientInfoException;
-import java.sql.Timestamp;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -245,7 +241,7 @@ public class BaseDAO {
 		int index = 1;
 		String sql = this.getInsertPreparedSql(object);
 		try {
-			ps = conn.prepareStatement(sql);
+			ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 			for(int i = 0; i < fields.length; i++){
 				fields[i].setAccessible(true);
 				if(fields[i].getName().toLowerCase().equals("id")) {
