@@ -1,6 +1,5 @@
 package com.bryantchang.autodepsys.controller.api.configpush;
 
-import com.bryantchang.autodepsys.common.Response;
 import com.bryantchang.autodepsys.constant.Constants;
 import com.bryantchang.autodepsys.service.ConfigPushService;
 import org.springframework.stereotype.Controller;

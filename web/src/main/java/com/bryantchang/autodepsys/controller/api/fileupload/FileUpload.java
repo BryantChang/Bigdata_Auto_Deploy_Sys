@@ -1,6 +1,5 @@
 package com.bryantchang.autodepsys.controller.api.fileupload;
 
-import com.bryantchang.autodepsys.common.Response;
 import com.bryantchang.autodepsys.constant.Constants;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

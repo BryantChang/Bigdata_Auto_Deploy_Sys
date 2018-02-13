@@ -1,8 +1,6 @@
 package com.bryantchang.autodepsys.controller.api.nodeops.hadoop;
 
-import com.bryantchang.autodepsys.common.Response;
 import com.bryantchang.autodepsys.constant.Constants;
-import com.bryantchang.autodepsys.dao.HadoopNodesDao;
 import com.bryantchang.autodepsys.service.HadoopNodeOpsService;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.stereotype.Controller;

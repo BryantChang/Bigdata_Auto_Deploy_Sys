@@ -1,6 +1,5 @@
 package com.bryantchang.autodepsys.controller.api.nodeops.spark;
 
-import com.bryantchang.autodepsys.common.Response;
 import com.bryantchang.autodepsys.constant.Constants;
 import com.bryantchang.autodepsys.service.SparkNodeOpsService;
 import org.codehaus.jackson.map.ObjectMapper;
