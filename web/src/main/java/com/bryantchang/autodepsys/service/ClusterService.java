@@ -31,13 +31,20 @@ public class ClusterService {
         Timestamp ctime = new Timestamp(new Date().getTime());
         Cluster cluster = new Cluster(0L, cname, desc, infoid, ctime);
         Cluster res = dao.addCluster(cluster);
-        UserCluster userCluster = new UserCluster(0L, Long.valueOf(curUser), res.getId(), ctime);
-        dao.addUserCluster(userCluster);
-        if(userCluster == null) {
+        logger.info(res);
+        if (res == null) {
             res = null;
         }else {
-            logger.info(res);
+            UserCluster userCluster = new UserCluster(0L, Long.valueOf(curUser), res.getId(), ctime);
+            dao.addUserCluster(userCluster);
+            if(userCluster == null) {
+                res = null;
+            }else {
+                logger.info(res);
+            }
         }
+
+
         return res;
     }
 }

@@ -49,4 +49,14 @@ public class UserCluster {
     public void setCtime(Timestamp ctime) {
         this.ctime = ctime;
     }
+
+    @Override
+    public String toString() {
+        return "UserCluster{" +
+                "id=" + id +
+                ", userid=" + userid +
+                ", clusterid=" + clusterid +
+                ", ctime=" + ctime +
+                '}';
+    }
 }

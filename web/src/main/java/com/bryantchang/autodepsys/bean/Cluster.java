@@ -65,6 +65,12 @@ public class Cluster {
 
     @Override
     public String toString() {
-        return "id=" + this.id + ", cname=" + this.cname + ", cdesc=" + this.cdesc + ", infoid=" + this.infoid;
+        return "Cluster{" +
+                "id=" + id +
+                ", cname='" + cname + '\'' +
+                ", cdesc='" + cdesc + '\'' +
+                ", infoid=" + infoid +
+                ", ctime=" + ctime +
+                '}';
     }
 }
