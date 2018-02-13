@@ -14,9 +14,10 @@ import java.util.Map;
 @Repository
 public class SparkSettingsDao extends BaseDAO{
     public SparkSettings addSetting(SparkSettings setting) {
-        boolean res = false;
-        res = this.insert(setting);
-        if(res == true) {
+        long pk = 0;
+        pk = this.insert(setting);
+        if(pk != 0) {
+            setting.setId(pk);
             return setting;
         }else {
             return null;

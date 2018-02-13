@@ -74,9 +74,10 @@ public class HadoopNodesDao extends BaseDAO {
 	}
 	
 	public HadoopNode addNode(HadoopNode node){
-		boolean res = false;
-		res = this.insert(node);
-		if(res == true) {
+		long pk = 0;
+		pk = this.insert(node);
+		if(pk != 0) {
+			node.setId(pk);
 			return node;
 		}else {
 			return null;

@@ -26,9 +26,10 @@ public class UserDao extends BaseDAO{
 	}
 	
 	public User addUser(User user) {
-		boolean res = false;
-		res = this.insert(user);
-		if(res == true) {
+		long pk = 0;
+		pk = this.insert(user);
+		if(pk != 0) {
+			user.setId(pk);
 			return user;
 		}else {
 			return null;

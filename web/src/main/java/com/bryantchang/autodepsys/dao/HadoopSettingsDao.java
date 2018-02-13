@@ -16,9 +16,10 @@ import java.util.Map;
 public class HadoopSettingsDao extends BaseDAO {
 //    private static final Logger logger = LoggerFactory.getLogger(HadoopSettingsDao.class);
     public HadoopSettings addSetting(HadoopSettings setting) {
-        boolean res = false;
-        res = this.insert(setting);
-        if(res == true) {
+        long pk = 0;
+        pk = this.insert(setting);
+        if(pk != 0) {
+            setting.setId(pk);
             return setting;
         }else {
             return null;
