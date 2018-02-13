@@ -20,23 +20,17 @@
 		<link rel="stylesheet" href="/autodeploymentsys/static/css/ie.css" type="text/css" media="screen" />
 		
 		<![endif]-->
-<script type="text/javascript"
-	src="/autodeploymentsys/static/js/jquery.js"></script>
-<script src="/autodeploymentsys/static/js/blog_admin/hideshow.js"
-	type="text/javascript"></script>
-<script
-	src="/autodeploymentsys/static/js/blog_admin/jquery.tablesorter.min.js"
-	type="text/javascript"></script>
-<script type="text/javascript"
-	src="/autodeploymentsys/static/js/blog_admin/jquery.equalHeight.js"></script>
-<script type="text/javascript"
-	src="/autodeploymentsys/static/js/bootstrap.js"></script>
-<script
-	src="/autodeploymentsys/static/js/autosys/clustermanage/hadoopNode.js"
-	type="text/javascript"></script>
+	<script type="text/javascript"
+		src="/autodeploymentsys/static/js/jquery.js"></script>
+	<script src="/autodeploymentsys/static/js/blog_admin/hideshow.js"
+		type="text/javascript"></script>
 	<script
-			src="/autodeploymentsys/static/js/autosys/clustermanage/sparkNode.js"
-			type="text/javascript"></script>
+		src="/autodeploymentsys/static/js/blog_admin/jquery.tablesorter.min.js"
+		type="text/javascript"></script>
+	<script type="text/javascript"
+		src="/autodeploymentsys/static/js/blog_admin/jquery.equalHeight.js"></script>
+	<script type="text/javascript"
+		src="/autodeploymentsys/static/js/bootstrap.js"></script>
 	<script
 			src="/autodeploymentsys/static/js/autosys/configmanage/hadoopConfig.js"
 			type="text/javascript"></script>
