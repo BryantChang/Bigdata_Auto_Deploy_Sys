@@ -22,7 +22,7 @@ public class ClusterOps {
     @ResponseBody
     @RequestMapping(value="/api/clustermanager/addcluster", method = {RequestMethod.POST, RequestMethod.GET})
     public Response addCluster(@RequestParam(value="clustername") String clustername,
-                               @RequestParam(value="desc") String desc,
+                               @RequestParam(value="des") String desc,
                                @RequestParam(value="infoid") String infoid){
         Cluster res = service.addCluster(clustername, desc, infoid);
         Response response = null;
