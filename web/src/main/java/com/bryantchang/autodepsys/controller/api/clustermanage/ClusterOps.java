@@ -33,7 +33,7 @@ public class ClusterOps {
         }
     }
 
-    static class Response {
+     class Response {
         private long code = 0;
         private String msg = "";
         private Cluster data = null;

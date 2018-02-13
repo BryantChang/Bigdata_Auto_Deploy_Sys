@@ -1,5 +1,6 @@
 package com.bryantchang.autodepsys.controller.api.nodeops.hadoop;
 
+import com.bryantchang.autodepsys.common.Response;
 import com.bryantchang.autodepsys.constant.Constants;
 import com.bryantchang.autodepsys.service.HadoopNodeOpsService;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -97,9 +98,9 @@ public class HadoopOps {
     @ResponseBody
     @RequestMapping(value="/api/nodeops/hadoop/ops", method = {RequestMethod.POST, RequestMethod.GET})
     public Response HadoopNodeOpsResponse(@RequestParam(value="clustertype") String clusterType,
-                                      @RequestParam(value="ip") String ip,
-                                      @RequestParam(value="nodetype") String nodeType,
-                                      @RequestParam(value="opstype") String opsType)  {
+                                          @RequestParam(value="ip") String ip,
+                                          @RequestParam(value="nodetype") String nodeType,
+                                          @RequestParam(value="opstype") String opsType)  {
         String res = service.hadoopNodeOps(ip, clusterType, nodeType, opsType);
         Response response = null;
         ObjectMapper mapper = new ObjectMapper();

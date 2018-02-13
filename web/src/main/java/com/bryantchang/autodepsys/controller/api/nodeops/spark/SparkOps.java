@@ -1,5 +1,6 @@
 package com.bryantchang.autodepsys.controller.api.nodeops.spark;
 
+import com.bryantchang.autodepsys.common.Response;
 import com.bryantchang.autodepsys.constant.Constants;
 import com.bryantchang.autodepsys.service.SparkNodeOpsService;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -67,8 +68,8 @@ public class SparkOps {
     @ResponseBody
     @RequestMapping(value="/api/nodeops/spark/ops", method = {RequestMethod.POST, RequestMethod.GET})
     public Response sparkOpsResponse(@RequestParam(value="ip") String ip,
-                                      @RequestParam(value="nodetype") String nodeType,
-                                      @RequestParam(value="opstype") String opsType,
+                                     @RequestParam(value="nodetype") String nodeType,
+                                     @RequestParam(value="opstype") String opsType,
                                      @RequestParam(value="masterip") String masterIp)  {
         String res = service.sparkNodeOps(ip, nodeType, opsType, masterIp);
         Response response = null;

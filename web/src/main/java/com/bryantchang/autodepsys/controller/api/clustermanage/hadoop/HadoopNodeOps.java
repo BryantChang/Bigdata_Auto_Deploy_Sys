@@ -91,7 +91,7 @@ public class HadoopNodeOps {
 	}
 	
 	
-	static class Response {
+	class Response {
 		private long code = 0;
 		private String msg = "";
 		private HadoopNode data = null;

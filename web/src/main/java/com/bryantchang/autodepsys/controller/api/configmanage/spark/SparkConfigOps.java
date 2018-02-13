@@ -108,7 +108,7 @@ public class SparkConfigOps extends AbstarctConfigOps{
 
 
 
-    static class Response {
+    class Response {
         private long code = 0;
         private String msg = "";
         private SparkSettings settings = null;

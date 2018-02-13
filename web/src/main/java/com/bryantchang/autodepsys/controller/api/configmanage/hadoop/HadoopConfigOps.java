@@ -114,7 +114,7 @@ public class HadoopConfigOps extends AbstarctConfigOps {
         return response;
     }
 
-    static class Response {
+    class Response {
         private long code = 0;
         private String msg = "";
         private HadoopSettings setting = null;
