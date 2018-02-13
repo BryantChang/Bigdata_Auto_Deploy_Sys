@@ -19,6 +19,9 @@ import com.bryantchang.autodepsys.bean.SparkNode;
 import com.bryantchang.autodepsys.bean.User;
 import com.bryantchang.autodepsys.common.BaseConnection;
 import com.mysql.jdbc.UpdatableResultSet;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
+import org.slf4j.LoggerFactory;
 
 
 /**
@@ -29,6 +32,8 @@ import com.mysql.jdbc.UpdatableResultSet;
 
 public class BaseDAO {
 
+
+	private static Logger logger = Logger.getLogger(BaseDAO.class);
 	/**
 	 * 获取select语句
 	 * @param cl 实体类对象
@@ -236,7 +241,7 @@ public class BaseDAO {
 		Field[] fields = cl.getDeclaredFields();
 		int index = 1;
 		String sql = this.getInsertPreparedSql(object);
-
+		logger.info(sql);
 //		System.out.println(sql);
 		try {
 			ps = conn.prepareStatement(sql);
