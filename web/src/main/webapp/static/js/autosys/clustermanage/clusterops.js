@@ -3,6 +3,11 @@ $(document).ready(function(){
         var clustername = $('#clustername').val();
         var cdesc = $('#cdesc').val();
         var infoid = $('#infoid').val();
+        var data = {
+            "clustername": clustername,
+            "cdesc": cdesc,
+            "infoid": infoid
+        };
         $.ajax({
             type: 'POST',
             url: baseUrl + "/api/clustermanager/addcluster",
