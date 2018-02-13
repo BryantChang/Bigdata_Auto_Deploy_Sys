@@ -4,6 +4,7 @@ $(document).ready(function(){
         var cdesc = $('#cdesc').val();
         var infoid = $('#infoid').val();
         var userid = $('#curUser').val();
+        alert(userid);
         var data = {
             "clustername": clustername,
             "cdesc": cdesc,
