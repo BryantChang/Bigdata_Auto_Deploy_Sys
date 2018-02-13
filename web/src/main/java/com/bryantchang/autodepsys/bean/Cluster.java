@@ -13,12 +13,22 @@ public class Cluster {
     public Cluster() {
     }
 
+
     public Cluster(Integer id, String cname, String cdesc, Long infoid, Timestamp ctime) {
         this.id = id;
         this.cname = cname;
         this.cdesc = cdesc;
         this.infoid = infoid;
         this.ctime = ctime;
+
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getCname() {
