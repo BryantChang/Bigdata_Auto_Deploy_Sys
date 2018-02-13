@@ -1,22 +1,22 @@
 package com.bryantchang.autodepsys.bean;
 
 public class ClusterInfo {
-    private Integer id = null;
+    private Long id = null;
     private String name = null;
 
     public ClusterInfo() {
     }
 
-    public ClusterInfo(Integer id, String name) {
+    public ClusterInfo(Long id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

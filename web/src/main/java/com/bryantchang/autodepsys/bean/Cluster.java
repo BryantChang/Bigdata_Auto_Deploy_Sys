@@ -3,7 +3,7 @@ package com.bryantchang.autodepsys.bean;
 import java.sql.Timestamp;
 
 public class Cluster {
-    private Integer id = null;
+    private Long id = null;
     private String cname = null;
     private String cdesc = null;
     private Long infoid = null;
@@ -14,7 +14,7 @@ public class Cluster {
     }
 
 
-    public Cluster(Integer id, String cname, String cdesc, Long infoid, Timestamp ctime) {
+    public Cluster(Long id, String cname, String cdesc, Long infoid, Timestamp ctime) {
         this.id = id;
         this.cname = cname;
         this.cdesc = cdesc;
@@ -23,11 +23,11 @@ public class Cluster {
 
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

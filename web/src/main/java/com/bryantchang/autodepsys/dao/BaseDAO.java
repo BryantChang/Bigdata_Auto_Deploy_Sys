@@ -233,16 +233,17 @@ public class BaseDAO {
 	}
 
 
-	public boolean insert(Object object) {
+	public long insert(Object object) {
 		boolean succ = false;
+		long primaryKey = 0;
 		Connection conn = BaseConnection.getConnection();
 		PreparedStatement ps = null;
 		Class cl = object.getClass();
+		ResultSet rs = null;
 		Field[] fields = cl.getDeclaredFields();
 		int index = 1;
 		String sql = this.getInsertPreparedSql(object);
 		logger.info(sql);
-//		System.out.println(sql);
 		try {
 			ps = conn.prepareStatement(sql);
 			for(int i = 0; i < fields.length; i++){
@@ -255,14 +256,15 @@ public class BaseDAO {
 			}
 			int res = ps.executeUpdate();
 			if(res > 0) {
-				succ = true;
+				rs = ps.getGeneratedKeys();
+				primaryKey = rs.getLong(1);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally{
 			BaseConnection.closeRes(conn, ps);
 		}
-		return succ;
+		return primaryKey;
 	}
 	
 	public boolean update(Object object) {

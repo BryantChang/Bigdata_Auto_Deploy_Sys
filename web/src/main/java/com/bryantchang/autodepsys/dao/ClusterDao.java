@@ -2,6 +2,7 @@ package com.bryantchang.autodepsys.dao;
 
 import com.bryantchang.autodepsys.bean.Cluster;
 import com.bryantchang.autodepsys.bean.ClusterInfo;
+import com.bryantchang.autodepsys.bean.UserCluster;
 import com.bryantchang.autodepsys.common.BaseConnection;
 import org.springframework.stereotype.Repository;
 
@@ -67,10 +68,22 @@ public class ClusterDao extends BaseDAO{
     }
 
     public Cluster addCluster(Cluster cluster) {
-        boolean res = false;
-        res = this.insert(cluster);
-        if(res == true) {
+        long primaryKey = 0;
+        primaryKey = this.insert(cluster);
+        if(primaryKey != 0) {
+            cluster.setId(primaryKey);
             return cluster;
+        }else {
+            return null;
+        }
+    }
+
+    public UserCluster addUserCluster(UserCluster userCluster) {
+        long pk = 0;
+        pk = this.insert(userCluster);
+        if(pk != 0) {
+            userCluster.setId(pk);
+            return userCluster;
         }else {
             return null;
         }

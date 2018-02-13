@@ -2,6 +2,8 @@ package com.bryantchang.autodepsys.service;
 
 
 import com.bryantchang.autodepsys.bean.Cluster;
+import com.bryantchang.autodepsys.bean.ClusterInfo;
+import com.bryantchang.autodepsys.bean.UserCluster;
 import com.bryantchang.autodepsys.dao.ClusterDao;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
@@ -23,13 +25,18 @@ public class ClusterService {
     }
 
 
-    public Cluster addCluster(String clustername, String desc, String infoidStr){
+    public Cluster addCluster(String clustername, String desc, String infoidStr, String curUser){
         String cname = clustername;
         Long infoid = Long.valueOf(infoidStr);
         Timestamp ctime = new Timestamp(new Date().getTime());
-        Cluster cluster = new Cluster(0, cname, desc, infoid, ctime);
-        logger.info(cluster);
+        Cluster cluster = new Cluster(0L, cname, desc, infoid, ctime);
         Cluster res = dao.addCluster(cluster);
+        UserCluster userCluster = new UserCluster(0L, Long.valueOf(curUser), res.getId(), ctime);
+        if(userCluster == null) {
+            res = null;
+        }else {
+            logger.info(res);
+        }
         return res;
     }
 }
