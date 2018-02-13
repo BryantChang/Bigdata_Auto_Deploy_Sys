@@ -32,6 +32,7 @@ public class ClusterService {
         Cluster cluster = new Cluster(0L, cname, desc, infoid, ctime);
         Cluster res = dao.addCluster(cluster);
         UserCluster userCluster = new UserCluster(0L, Long.valueOf(curUser), res.getId(), ctime);
+        dao.addUserCluster(userCluster);
         if(userCluster == null) {
             res = null;
         }else {

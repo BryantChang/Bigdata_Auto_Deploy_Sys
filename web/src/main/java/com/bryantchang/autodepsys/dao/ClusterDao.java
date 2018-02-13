@@ -4,6 +4,7 @@ import com.bryantchang.autodepsys.bean.Cluster;
 import com.bryantchang.autodepsys.bean.ClusterInfo;
 import com.bryantchang.autodepsys.bean.UserCluster;
 import com.bryantchang.autodepsys.common.BaseConnection;
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
@@ -16,6 +17,7 @@ import java.util.Map;
 
 @Repository
 public class ClusterDao extends BaseDAO{
+    private static Logger logger = Logger.getLogger(ClusterDao.class);
     /**
      * getAllClusterIdsByUid 根据用户id获取所有的ClusterId
      * @param userId
@@ -27,6 +29,8 @@ public class ClusterDao extends BaseDAO{
         PreparedStatement pStatement = null;
         ResultSet rSet = null;
         String sql = "select clusterid from usercluster where userid = " + Long.valueOf(userId);
+        logger.info(sql);
+
         try {
             pStatement = connection.prepareStatement(sql);
             rSet = pStatement.executeQuery();
